@@ -1,0 +1,79 @@
+/* Element selector */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+header, nav, section {
+    padding: 20px;
+}
+
+/* Flexbox layout for nav menu */
+nav ul {
+    display: flex;
+    list-style-type: none;
+    background-color: #333;
+    padding: 10px;
+    margin: 0;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+/* Hover effect */
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+/* Class selector */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.grid-item {
+    background-color: #ddd;
+    padding: 20px;
+    border: 2px solid #aaa;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* ID selector */
+#highlight {
+    background-color: yellow;
+    padding: 10px;
+    border: 1px solid orange;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #666;
+    padding: 10px;
+    text-align: left;
+}
+
+h1, h2, h3 {
+    color: #2c3e50;
+}
+
