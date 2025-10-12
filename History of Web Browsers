@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic 1 - History of Web Browsers </title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>How Do Web Browsers Work?</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="topic1.html">Topic 1</a></li>
+            <li><a href="topic2.html">Topic 2</a></li>
+            <li><a href="references.html">References</a></li>
+            <li><a href="key_concepts.html">Key Concepts</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <h2>Web Browsers allow users to access videos, images, and text through Hypertext Transfer Protocol (HTTP) and an internet connection</h2>
+        <p></p>
+
+        <h3>Key Elements</h3>
+        <ul>
+            <li>google</li>
+            <li>safari</li>
+            <li>firefox</li>
+        </ul>
+    </section>
+</body>
+</html>
