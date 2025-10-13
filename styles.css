@@ -53,8 +53,8 @@ nav ul li a:hover {
     font-weight: bold;
 }
 
-/* Choosing ID color */
-#highlight {
+/* Choosing hightlighter color */
+.highlight {
     background-color: yellow;
     padding: 10px;
     border: 1px solid orange;
