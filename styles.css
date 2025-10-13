@@ -53,13 +53,6 @@ nav ul li a:hover {
     font-weight: bold;
 }
 
-/* Choosing hightlighter color */
-.highlight {
-    background-color: yellow;
-    padding: 5px;
-    border: 1px solid orange;
-}
-
 /* Creating table style, borders, padding */
 table {
     width: 100%;
