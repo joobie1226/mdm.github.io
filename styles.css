@@ -1,21 +1,21 @@
-/* Element selector */
+/* Selecting font and element */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f2f5;
-    color: #333;
+    background-color: lightgray; 
+    color: darkslategray;        
 }
 
 header, nav, section {
     padding: 20px;
 }
 
-/* Flexbox layout for nav menu */
+/* Creating the nav menu with flexbox */
 nav ul {
     display: flex;
     list-style-type: none;
-    background-color: #333;
+    background-color: black;   
     padding: 10px;
     margin: 0;
     justify-content: center;
@@ -25,7 +25,7 @@ nav ul li {
     margin: 0 15px;
 }
 
-/* Hover effect */
+/* Creating the nav menu hover effect */
 nav ul li a {
     color: white;
     text-decoration: none;
@@ -34,7 +34,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #555;
+    background-color: dimgray;  
 }
 
 /* Class selector */
@@ -46,21 +46,21 @@ nav ul li a:hover {
 }
 
 .grid-item {
-    background-color: #ddd;
+    background-color: lightgray;    
     padding: 20px;
-    border: 2px solid #aaa;
+    border: 2px solid gray;         
     text-align: center;
     font-weight: bold;
 }
 
-/* ID selector */
+/* Choosing ID color */
 #highlight {
     background-color: yellow;
     padding: 10px;
     border: 1px solid orange;
 }
 
-/* Table styling */
+/* Creating table style, borders, padding */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -68,12 +68,13 @@ table {
 }
 
 table, th, td {
-    border: 1px solid #666;
+    border: 1px solid dimgray;   
     padding: 10px;
     text-align: left;
 }
 
+/* Heading color */
 h1, h2, h3 {
-    color: #2c3e50;
+    color: darkslateblue;       
 }
 
