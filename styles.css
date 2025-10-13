@@ -71,3 +71,18 @@ h1, h2, h3 {
     color: darkslateblue;       
 }
 
+/* Creating space for images on the right side of the home page */
+.wb-images {
+    float: right;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+/* Creates border color, padding, and space for images on the home page */
+.wb-images img {
+    display: block;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    background-color: white;
+    border-radius: 8px;
+}
