@@ -53,7 +53,7 @@ body {
   color: #fff;
 }
 .btn:disabled{ 
-    cursor: no-drop
+    cursor: no-drop;
 #next-btn{ /* Style for the Next button on quiz */
     background: #fff;
     color: #222;
