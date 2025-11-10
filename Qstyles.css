@@ -5,10 +5,10 @@
   box-sizing: border-box; 
 }
 body {
-  background: #0cdeed;
+  background: #fff;
 }
 .app{
-  background: #fff;
+  background: #0cdeed;
   width: 90%;
   max-width: 600px;
   margin: 100px auto 0;
