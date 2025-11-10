@@ -41,7 +41,14 @@ body {
   text-align: left;
   border-radius: 4;
   cursor: pointer;
+  transition: all 0.3s;
 }
+.btn:hover{
+  background: #00000;
+  color: #fff;
+}
+  
+  
   
   
     
