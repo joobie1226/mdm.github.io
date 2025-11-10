@@ -31,7 +31,7 @@ body {
   font-weight: 600;
 }
 .btn{
-  background: #00000;
+  background: #fff;
   color: #222;
   font-weight: 500;
   width: 100%;
@@ -44,7 +44,7 @@ body {
   transition: all 0.3s;
 }
 .btn:hover{
-  background: #00000;
+  background: #222;
   color: #fff;
 }
   
