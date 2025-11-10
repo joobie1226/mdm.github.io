@@ -48,14 +48,15 @@ body {
   cursor: pointer;
   transition: all 0.3s;
 }
-.btn:hover:not([disabled]){ /* Hover affect for  answer buttons, disables button after click */
+ /* Hover affect for  answer buttons, disables button after click */
+.btn:hover:not([disabled]){
   background: #222;
   color: #fff;
 }
 .btn:disabled{ 
     cursor: no-drop;
-    
-#next-btn{ /* Style for the Next button on quiz */
+/* Style for the Next button on quiz */
+#next-btn{ 
     background: #fff;
     color: #222;
     font-weight: 500;
