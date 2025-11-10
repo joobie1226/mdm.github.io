@@ -2,6 +2,7 @@ header, nav, section {
     padding: 20px;
 }
 
+/* Style for the quiz app */
 * {
   margin: 0;
   padding: 0;
@@ -47,11 +48,13 @@ body {
   cursor: pointer;
   transition: all 0.3s;
 }
-.btn:hover{
+.btn:hover:not([disabled]){ /* Hover affect for  answer buttons, disables button after click */
   background: #222;
   color: #fff;
 }
-#next-btn{
+.btn:disabled{ 
+    cursor: no-drop
+#next-btn{ /* Style for the Next button on quiz */
     background: #fff;
     color: #222;
     font-weight: 500;
@@ -63,6 +66,7 @@ body {
     cursor: pointer;
     display: none;
 }
+    /* Changes answer button color when clicked */
 .correct{
     background: #8eedb7;
 }
