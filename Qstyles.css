@@ -54,6 +54,7 @@ body {
 }
 .btn:disabled{ 
     cursor: no-drop;
+    
 #next-btn{ /* Style for the Next button on quiz */
     background: #fff;
     color: #222;
@@ -74,11 +75,7 @@ body {
     background: #a65a5a;
 }
     
-  
-  
-  
-  
-    
+
 nav ul {
     display: flex;
     list-style-type: none;
