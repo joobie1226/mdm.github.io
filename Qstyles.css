@@ -55,6 +55,7 @@ body {
 }
 .btn:disabled{ 
     cursor: no-drop;
+}
 /* Style for the Next button on quiz */
 #next-btn{ 
     background: #fff;
