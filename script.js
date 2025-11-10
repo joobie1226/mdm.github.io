@@ -72,9 +72,14 @@ function selectAnswer(e){
   }else(
     selectedBtn.classlist.add("incorrect");
 }
+  Array.from(answerButtons.children).forEach (button => {
+    if(button.dataset.correct === "true"){
+      button.classlist.add("correct");
+    }
+    button.disabled = true;
+  });
+  nextButton.style.display = "block";    
 }
-  
-  
-  
+   
 startQuiz()
   
