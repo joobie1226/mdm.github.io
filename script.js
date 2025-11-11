@@ -175,12 +175,13 @@ function selectMultiSelectionAnswers(currentQuestion) {
   }
 
   // Show correct answers after multi-selection
-  currentQuestion.answers.forEach(answer => {
-    const checkbox = Array.from(checkboxes).find(cb => cb.value === answer.text);
-    if (answer.correct && !checkbox.checked) {
+ checkboxes.forEach(checkbox => {
+    if (checkbox.dataset.correct === "true" && checkbox.checked) {
       checkbox.parentElement.classList.add("correct");
-    } else if (!answer.correct && checkbox.checked) {
+    } else if (checkbox.dataset.correct === "false" && checkbox.checked) {
       checkbox.parentElement.classList.add("incorrect");
+    } else if (checkbox.dataset.correct === "true" && !checkbox.checked) {
+      checkbox.parentElement.classList.add("correct");
     }
   });
 
