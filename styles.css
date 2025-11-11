@@ -41,7 +41,7 @@ header, nav, section {
 /* Text bubble specific to the format of the web browser competition page */
 .text-bubbles.competition-page {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr));
     justify-content: center;
     gap: 20px;
     margin-top: 20px;
@@ -58,7 +58,7 @@ header, nav, section {
 /* Aligns the first header above the middle headers and the last header below the middle headers */
 .text-bubbles.competition-page .text-bubble:first-child,
 .text-bubbles.competition-page .text-bubble:last-child {
-    grid-column: 1 / -1;
+    grid-column: 1 / 4;
 }
     
 
