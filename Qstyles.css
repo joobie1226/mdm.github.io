@@ -9,10 +9,12 @@ header, nav, section {
   font-family: 'Arial', sans-serif;
   box-sizing: border-box; 
 }
+
 body {
   background: #fff;
 }
-.app{
+
+.app {
   background: darkslateblue;
   width: 90%;
   max-width: 600px;
@@ -20,22 +22,26 @@ body {
   border-radius: 10px;
   padding: 30px;
 }
-.app h1{
+
+.app h1 {
   font-size: 25px;
   color: #fff;
   font-weight: 600;
   border-bottom: 1px solid #333;
   padding-bottom: 30px;
 }
-.quiz{
-  padding:20px 0;
+
+.quiz {
+  padding: 20px 0;
 }
-.quiz h2{
+
+.quiz h2 {
   font-size: 18px;
   color: #fff;
   font-weight: 600;
 }
-.btn{
+
+.btn {
   background: #fff;
   color: #222;
   font-weight: 500;
@@ -48,87 +54,95 @@ body {
   cursor: pointer;
   transition: all 0.3s;
 }
- /* Hover affect for  answer buttons, disables button after click */
-.btn:hover:not([disabled]){
+
+/* Hover effect for answer buttons, disables button after click */
+.btn:hover:not([disabled]) {
   background: #222;
   color: #fff;
 }
-.btn:disabled{ 
-    cursor: no-drop;
+
+.btn:disabled { 
+  cursor: no-drop;
 }
+
 /* Style for the Next button on quiz */
-#next-btn{ 
-    background: #fff;
-    color: #222;
-    font-weight: 500;
-    width: 150px;
-    border: 0;
-    padding: 10px;
-    margin: 20px auto 0;
-    border-radius: 4px;
-    cursor: pointer;
-    display: none;
+#next-btn { 
+  background: #fff;
+  color: #222;
+  font-weight: 500;
+  width: 150px;
+  border: 0;
+  padding: 10px;
+  margin: 20px auto 0;
+  border-radius: 4px;
+  cursor: pointer;
+  display: none;
 }
-    /* Changes answer button color when clicked */
-.correct{
-    background: #8eedb7;
+
+/* Changes answer button color when clicked */
+.correct {
+  background: #8eedb7; /* Green for correct answers */
 }
-.incorrect{
-    background: #a65a5a;
+
+.incorrect {
+  background: #a65a5a; /* Red for incorrect answers */
 }
+
 .checkbox-container input.correct {
-    background-color: #8eedb7;
-   
-.checkbox-container input.incorrect {
-    background-color: #a65a5a;
+  background-color: #8eedb7; /* Green for correct answers */
 }
+
+.checkbox-container input.incorrect {
+  background-color: #a65a5a; /* Red for incorrect answers */
+}
+
 .checkbox-container {
   display: flex;
   align-items: center;
   margin: 5px 0;
 }
+
 .checkbox-container input {
   margin-right: 10px;
 }
+
 nav ul {
-    display: flex;
-    list-style-type: none;
-    background-color: black;   
-    padding: 10px;
-    margin: 0;
-    justify-content: center;
+  display: flex;
+  list-style-type: none;
+  background-color: black;   
+  padding: 10px;
+  margin: 0;
+  justify-content: center;
 }
 
 nav ul li {
-    margin: 0 15px;
+  margin: 0 15px;
 }
 
 /* Creating the nav menu hover effect */
 nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 5px 10px;
-    border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
 nav ul li a:hover {
-    background-color: dimgray;  
+  background-color: dimgray;  
 }
 
 /* Class selector */
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 20px;
 }
 
 .grid-item {
-    background-color: lightgray;    
-    padding: 20px;
-    border: 2px solid gray;         
-    text-align: center;
-    font-weight: bold;
+  background-color: lightgray;    
+  padding: 20px;
+  border: 2px solid gray;         
+  text-align: center;
+  font-weight: bold;
 }
-
-  
