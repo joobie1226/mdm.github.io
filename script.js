@@ -124,7 +124,7 @@ function showQuestion() {
 }
 // Function to reset the state of the question, deleting all buttons before the next question
 function resetState() {
-  nextButton.style.display = "none"; 
+  nextButton.style.display = "none";
   while (answerButtons.firstChild) {
     answerButtons.removeChild(answerButtons.firstChild);
   }
