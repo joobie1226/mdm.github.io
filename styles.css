@@ -38,26 +38,33 @@ header, nav, section {
     margin: 0 auto;         
 }
 
-/* Text bubble specific to the format of the web browser competition page */
+/* Formatting specific to the first competition page, ensuring the first and last headers are above and below the middle three */
 .text-bubbles.competition-page {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
-    grid-template-rows: auto;
+    grid-template-rows: auto; 
     gap: 20px;
     margin-top: 20px;
 }
 
-/* First and last headers sit above and below the middle three headers */
-.text-bubbles.competition-page .text-bubble:first-child,
-.text-bubbles.competition-page .text-bubble:last-child {
-    grid-column: 1 / -1; 
+/* First header spans all columns and goes in the first row */
+.text-bubbles.competition-page .text-bubble:first-child {
+    grid-column: 1 / -1;
+    grid-row: 1; 
 }
 
-/* Fitting for the middle three headers */
+/* Middle three headers start from the second row */
 .text-bubbles.competition-page .text-bubble:nth-child(n+2):nth-last-child(n+2) {
-    grid-column: auto; 
+    grid-column: auto;
+    grid-row: 2; 
 }
-    
+
+/* Last header spans all columns and goes after the middle three */
+.text-bubbles.competition-page .text-bubble:last-child {
+    grid-column: 1 / -1;
+    grid-row: 3; 
+}
+
 /* Creating the nav menu with flexbox */
 nav ul {
     display: flex;
