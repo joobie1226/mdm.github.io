@@ -1,6 +1,7 @@
 const questions = [
   {
     question: "Which web browser currently controls the majority of the market?",
+    type: "multiple-choice",
     answers: [
       { text: "Firefox", correct: false },
       { text: "Chrome", correct: true },
@@ -10,6 +11,7 @@ const questions = [
   },
   {
     question: "Who created the first web browser?",
+    type: "multiple-choice",
     answers: [
       { text: "Steve Jobs", correct: false },
       { text: "Tim Robinson", correct: false },
@@ -19,11 +21,27 @@ const questions = [
   },
   {
     question: "What does HTTP stand for?",
+    type: "multiple-choice",
     answers: [
       { text: "Hypertext Transfer Protocol", correct: true },
       { text: "Hypertext Transitional Protocol", correct: false },
       { text: "Highlighters Tell Time Profoundly", correct: false },
       { text: "Hypertest Text Professional", correct: false }
+    ]
+  },
+  {
+    question: "Fill in the correct answer: What was the name of the first web browser created?",
+    type: "fill-in-blank",
+    correctAnswers: "world wide web"
+  },
+  {
+    question: "Select all that apply: Which of the following features are specific to Safari?",
+    type: "multi-selection",
+    answers: [
+      { text: "Apple Pay", correct: true },
+      { text: "Keychain", correct: true },
+      { text: "Copilot", correct: false },
+      { text: "iCloud+", correct: true }
     ]
   }
 ];
@@ -48,16 +66,52 @@ function showQuestion() {
   let questionNo = currentQuestionIndex + 1;
   questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
 
-  currentQuestion.answers.forEach(answer => {
-    const button = document.createElement("button");
-    button.innerHTML = answer.text;
-    button.classList.add("btn");
-    answerButtons.appendChild(button);
-    if (answer.correct) {
-      button.dataset.correct = answer.correct;
-    }
-    button.addEventListener("click", selectAnswer);
-  });
+  if (currentQuestion.type === "multiple-choice") {
+    currentQuestion.answers.forEach(answer => {
+      const button = document.createElement("button");
+      button.innerHTML = answer.text;
+      button.classList.add("btn");
+      answerButtons.appendChild(button);
+      if (answer.correct) {
+        button.dataset.correct = answer.correct;
+      }
+      button.addEventListener("click", selectAnswer);
+    });
+  } else if (currentQuestion.type === "fill-in-blank") {
+    const input = document.createElement("input");
+    input.type = "text";
+    input.classList.add("input");
+    answerButtons.appendChild(input);
+
+    const submitButton = document.createElement("button");
+    submitButton.innerHTML = "Submit Answer";
+    submitButton.classList.add("btn");
+    answerButtons.appendChild(submitButton);
+
+    submitButton.addEventListener("click", () => {
+      const userAnswer = input.value.trim().toLowerCase();
+      selectAnswer(userAnswer === currentQuestion.correctAnswers.toLowerCase());
+    });
+  } else if (currentQuestion.type === "multi-selection") {
+    currentQuestion.answers.forEach(answer => {
+      const checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.value = answer.text;
+      const label = document.createElement("label");
+      label.innerHTML = answer.text;
+
+      const div = document.createElement("div");
+      div.classList.add("checkbox-container");
+      div.appendChild(checkbox);
+      div.appendChild(label);
+      answerButtons.appendChild(div);
+
+      checkbox.dataset.correct = answer.correct;
+      checkbox.addEventListener("change", () => selectMultiSelectionAnswers(currentQuestion));
+    });
+  }
+
+  nextButton.style.display = "none"; // Hide next button initially
 }
 
 function resetState() {
@@ -67,24 +121,33 @@ function resetState() {
   }
 }
 
-function selectAnswer(e) {
-  const selectedBtn = e.target;
-  const isCorrect = selectedBtn.dataset.correct === "true";
+function selectAnswer(isCorrect) {
   if (isCorrect) {
-    selectedBtn.classList.add("correct");
     score++;
-  } else {
-    selectedBtn.classList.add("incorrect");
   }
+  nextButton.style.display = "block"; // Show next button after selection
+}
 
-  Array.from(answerButtons.children).forEach(button => {
-    if (button.dataset.correct === "true") {
-      button.classList.add("correct");
+function selectMultiSelectionAnswers(currentQuestion) {
+  const checkboxes = document.querySelectorAll(".checkbox-container input");
+  let correctCount = 0;
+  let selectedCount = 0;
+
+  checkboxes.forEach(checkbox => {
+    if (checkbox.dataset.correct === "true" && checkbox.checked) {
+      correctCount++;
     }
-    button.disabled = true;
+    if (checkbox.checked) {
+      selectedCount++;
+    }
   });
 
-  nextButton.style.display = "block";
+  // Check if the number of correct answers matches the selected answers
+  if (correctCount === selectedCount && correctCount === currentQuestion.answers.filter(a => a.correct).length) {
+    score++;
+  }
+
+  nextButton.style.display = "block"; // Show next button after multi-selection
 }
 
 function showScore() {
@@ -110,6 +173,9 @@ nextButton.addEventListener("click", () => {
     startQuiz();
   }
 });
+
+startQuiz();
+
 
 startQuiz();
 
