@@ -3,6 +3,10 @@ header, nav, section {
     padding: 20px;
 }
 
+ h1 {
+     color: darkslateblue;
+ }
+
 /* Styles for the quiz app */
 * {
   margin: 0;
