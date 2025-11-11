@@ -90,7 +90,7 @@ function showQuestion() {
 
     submitButton.addEventListener("click", () => {
       const userAnswer = input.value.trim().toLowerCase();
-      selectAnswer(submitButton, userAnswer === currentQuestion.correctAnswers.toLowerCase());
+      selectAnswer(submitButton, userAnswer === currentQuestion.correctAnswers.toLowerCase(), userAnswer, currentQuestion.correctAnswers);
     });
   } else if (currentQuestion.type === "multi-selection") {
     currentQuestion.answers.forEach(answer => {
@@ -121,12 +121,17 @@ function resetState() {
   }
 }
 
-function selectAnswer(button, isCorrect) {
+function selectAnswer(button, isCorrect, userAnswer = null, correctAnswer = null) {
   if (isCorrect) {
     score++;
     button.classList.add("correct");
   } else {
     button.classList.add("incorrect");
+
+    // Show correct answer for fill-in-blank
+    if (userAnswer && correctAnswer) {
+      questionElement.innerHTML += `<br><strong>Correct Answer: ${correctAnswer}</strong>`;
+    }
   }
 
   // Disable all buttons after selection
@@ -158,6 +163,16 @@ function selectMultiSelectionAnswers(currentQuestion) {
   if (correctCount === selectedCount && correctCount === currentQuestion.answers.filter(a => a.correct).length) {
     score++;
   }
+
+  // Show correct answers after multi-selection
+  currentQuestion.answers.forEach(answer => {
+    const checkbox = Array.from(checkboxes).find(cb => cb.value === answer.text);
+    if (answer.correct && !checkbox.checked) {
+      checkbox.parentElement.classList.add("correct");
+    } else if (!answer.correct && checkbox.checked) {
+      checkbox.parentElement.classList.add("incorrect");
+    }
+  });
 
   nextButton.style.display = "block"; // Show next button after multi-selection
 }
@@ -195,3 +210,4 @@ nextButton.addEventListener("click", () => {
 });
 
 startQuiz();
+
