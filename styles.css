@@ -20,12 +20,11 @@ header, nav, section {
 }
 
 .text-bubble {
-    background-color:  #e0e0e0;
+    background-color:  lightgray;
     border: 2px solid gray;
     border-radius: 15px;
     padding: 20px;
     box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
-    text-align: center;
 }
 
 /* Creating the nav menu with flexbox */
