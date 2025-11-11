@@ -76,6 +76,14 @@ body {
 .incorrect{
     background: #a65a5a;
 }
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+.checkbox-container input {
+    margin-right: 10px;
+}
     
 
 nav ul {
