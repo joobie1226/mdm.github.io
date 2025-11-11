@@ -1,19 +1,20 @@
+/* padding for header,nav menu, and section elements */
 header, nav, section {
     padding: 20px;
 }
 
-/* Style for the quiz app */
+/* Styles for the quiz app */
 * {
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
   box-sizing: border-box; 
 }
-
+/* Sets the quiz page background to white */
 body {
   background: #fff;
 }
-
+/* Styles the main surface for the quiz */
 .app {
   background: darkslateblue;
   width: 90%;
@@ -22,7 +23,7 @@ body {
   border-radius: 10px;
   padding: 30px;
 }
-
+/* Style for the main heading inside the quiz */
 .app h1 {
   font-size: 25px;
   color: #fff;
@@ -30,7 +31,7 @@ body {
   border-bottom: 1px solid #333;
   padding-bottom: 30px;
 }
-
+/* Styling for the quiz section and question headings inside the quiz */
 .quiz {
   padding: 20px 0;
 }
@@ -40,7 +41,7 @@ body {
   color: #fff;
   font-weight: 600;
 }
-
+/* Complete styling of the buttons inside the quiz */
 .btn {
   background: #fff;
   color: #222;
@@ -81,19 +82,19 @@ body {
 
 /* Changes answer button color when clicked */
 .correct {
-  background: #8eedb7; /* Green for correct answers */
+  background: #8eedb7; 
 }
 
 .incorrect {
-  background: #a65a5a; /* Red for incorrect answers */
+  background: #a65a5a; 
 }
 
 .checkbox-container input.correct {
-  background-color: #8eedb7; /* Green for correct answers */
+  background-color: #8eedb7; 
 }
 
 .checkbox-container input.incorrect {
-  background-color: #a65a5a; /* Red for incorrect answers */
+  background-color: #a65a5a; 
 }
 
 .checkbox-container {
@@ -105,7 +106,7 @@ body {
 .checkbox-container input {
   margin-right: 10px;
 }
-
+/* Styling for the nav menu */
 nav ul {
   display: flex;
   list-style-type: none;
