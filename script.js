@@ -75,7 +75,7 @@ function showQuestion() {
       if (answer.correct) {
         button.dataset.correct = answer.correct;
       }
-      button.addEventListener("click", selectAnswer);
+      button.addEventListener("click", () => selectAnswer(button, answer.correct));
     });
   } else if (currentQuestion.type === "fill-in-blank") {
     const input = document.createElement("input");
@@ -90,7 +90,7 @@ function showQuestion() {
 
     submitButton.addEventListener("click", () => {
       const userAnswer = input.value.trim().toLowerCase();
-      selectAnswer(userAnswer === currentQuestion.correctAnswers.toLowerCase());
+      selectAnswer(submitButton, userAnswer === currentQuestion.correctAnswers.toLowerCase());
     });
   } else if (currentQuestion.type === "multi-selection") {
     currentQuestion.answers.forEach(answer => {
@@ -115,16 +115,28 @@ function showQuestion() {
 }
 
 function resetState() {
-  nextButton.style.display = "none";
+  nextButton.style.display = "none"; // Hide next button initially
   while (answerButtons.firstChild) {
     answerButtons.removeChild(answerButtons.firstChild);
   }
 }
 
-function selectAnswer(isCorrect) {
+function selectAnswer(button, isCorrect) {
   if (isCorrect) {
     score++;
+    button.classList.add("correct");
+  } else {
+    button.classList.add("incorrect");
   }
+
+  // Disable all buttons after selection
+  Array.from(answerButtons.children).forEach(btn => {
+    btn.disabled = true;
+    if (btn.dataset.correct === "true") {
+      btn.classList.add("correct");
+    }
+  });
+
   nextButton.style.display = "block"; // Show next button after selection
 }
 
@@ -153,6 +165,14 @@ function selectMultiSelectionAnswers(currentQuestion) {
 function showScore() {
   resetState();
   questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
+
+  // Display Pass/Fail Message
+  if (score >= 3) {
+    questionElement.innerHTML += "<br><br>You Passed!";
+  } else {
+    questionElement.innerHTML += "<br><br>You Failed!";
+  }
+
   nextButton.innerHTML = "Play Again";
   nextButton.style.display = "block";
 }
@@ -175,8 +195,3 @@ nextButton.addEventListener("click", () => {
 });
 
 startQuiz();
-
-
-startQuiz();
-
-
