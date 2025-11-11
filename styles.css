@@ -88,6 +88,14 @@ h1, h2, h3 {
     color: darkslateblue;       
 }
 
+b {
+    color: #818ec9;
+}
+
+p {
+    color: #818ec9;
+}
+
 /* Creating space for images on the right side of the home page */
 .wb-images {
     float: right;
@@ -105,7 +113,7 @@ h1, h2, h3 {
 }
 footer {
     text-align: center;
-    background-color: darkslateblue;
+    background-color: #67686b;
     padding: 15px 0;
     position: fixed;
     bottom: 0;
