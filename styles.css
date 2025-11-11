@@ -11,6 +11,25 @@ header, nav, section {
     padding: 20px;
 }
 
+.text-bubbles {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.text-bubble {
+    background-color: white;
+    border: 2px solid gray;
+    border-radius: 15px;
+    padding: 20px;
+    flex: 1;
+    min-width: 300px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+}
+
 /* Creating the nav menu with flexbox */
 nav ul {
     display: flex;
