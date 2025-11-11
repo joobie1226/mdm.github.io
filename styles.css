@@ -30,6 +30,15 @@ header, nav, section {
     display: inline-block;
 }
 
+.text-bubble ul {
+    list-style: none;   
+    padding-left: 0;       
+    display: inline-block; 
+    text-align: left;       
+    margin: 0 auto;         
+}
+
+
 /* Creating the nav menu with flexbox */
 nav ul {
     display: flex;
