@@ -17,6 +17,8 @@ header, nav, section {
     justify-content: center;
     gap: 20px;
     margin-top: 20px;
+    text-align: center;
+    
 }
 
 .text-bubble {
@@ -25,6 +27,7 @@ header, nav, section {
     border-radius: 15px;
     padding: 20px;
     box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+    display: inline-block;
 }
 
 /* Creating the nav menu with flexbox */
