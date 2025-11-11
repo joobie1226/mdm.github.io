@@ -52,10 +52,12 @@ const nextButton = document.getElementById("next-btn");
 
 let currentQuestionIndex = 0;
 let score = 0;
+let answersGiven = []; // To track user's answers
 
 function startQuiz() {
   currentQuestionIndex = 0;
   score = 0;
+  answersGiven = [];
   nextButton.innerHTML = "Next";
   showQuestion();
 }
@@ -93,6 +95,7 @@ function showQuestion() {
       selectAnswer(submitButton, userAnswer === currentQuestion.correctAnswers.toLowerCase(), userAnswer, currentQuestion.correctAnswers);
     });
   } else if (currentQuestion.type === "multi-selection") {
+    // Hide answers initially for multi-selection
     currentQuestion.answers.forEach(answer => {
       const checkbox = document.createElement("input");
       checkbox.type = "checkbox";
@@ -107,8 +110,12 @@ function showQuestion() {
       answerButtons.appendChild(div);
 
       checkbox.dataset.correct = answer.correct;
-      checkbox.addEventListener("change", () => selectMultiSelectionAnswers(currentQuestion));
+      checkbox.addEventListener("change", () => {
+        selectMultiSelectionAnswers(currentQuestion);
+      });
     });
+
+    nextButton.style.display = "none"; // Hide next button initially
   }
 
   nextButton.style.display = "none"; // Hide next button initially
@@ -122,6 +129,9 @@ function resetState() {
 }
 
 function selectAnswer(button, isCorrect, userAnswer = null, correctAnswer = null) {
+  // Store answer and update score
+  answersGiven[currentQuestionIndex] = { answer: button.innerHTML, correct: isCorrect };
+
   if (isCorrect) {
     score++;
     button.classList.add("correct");
@@ -159,7 +169,7 @@ function selectMultiSelectionAnswers(currentQuestion) {
     }
   });
 
-  // Check if the number of correct answers matches the selected answers
+  // Update the score only when the correct number of answers are selected
   if (correctCount === selectedCount && correctCount === currentQuestion.answers.filter(a => a.correct).length) {
     score++;
   }
@@ -210,4 +220,3 @@ nextButton.addEventListener("click", () => {
 });
 
 startQuiz();
-
