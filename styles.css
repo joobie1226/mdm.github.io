@@ -20,7 +20,7 @@ header, nav, section {
 }
 
 .text-bubble {
-    background-color: white;
+    background-color:  #e0e0e0;
     border: 2px solid gray;
     border-radius: 15px;
     padding: 20px;
@@ -113,7 +113,7 @@ p {
 }
 footer {
     text-align: center;
-    background-color: #e0e0e0;
+    background-color: darkslateblue;
     padding: 15px 0;
     position: fixed;
     bottom: 0;
