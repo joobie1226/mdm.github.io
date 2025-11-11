@@ -20,8 +20,8 @@ header, nav, section {
 }
 
 .text-bubble {
-    background-color:  lightgray;
-    border: 2px solid gray;
+    background-color: darkgray ;
+    border: 2px solid black;
     border-radius: 15px;
     padding: 20px;
     box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
