@@ -7,7 +7,7 @@ const questions = [
       { text: "Firefox", correct: false },
       { text: "Chrome", correct: true },
       { text: "Safari", correct: false },
-      { text: "Explorer", correct: false }
+      { text: "Edge", correct: false }
     ]
   },
   {
