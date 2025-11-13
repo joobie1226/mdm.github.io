@@ -62,7 +62,7 @@ nav ul li a {
     position: relative;
     transition: all 0.3s ease;
 }
-
+/* Updated nav menu with underline animation*/
 nav ul li a::after {
     content: '';
     position: absolute;
@@ -107,7 +107,7 @@ table, th, td {
     text-align: left;
 }
 
-/* Heading color */
+/* Heading,bold and paragraph text color */
 h1, h2, h3 {
     color: darkslateblue;       
 }
