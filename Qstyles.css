@@ -110,30 +110,45 @@ body {
 .checkbox-container input {
   margin-right: 10px;
 }
-/* Styling for the nav menu */
+
+/* Styling for nav menu on the quiz page */
 nav ul {
-  display: flex;
-  list-style-type: none;
-  background-color: black;   
-  padding: 10px;
-  margin: 0;
-  justify-content: center;
+    display: flex;
+    list-style-type: none;
+    background-color: black;   
+    padding: 10px;
+    margin: 0;
+    justify-content: center;
+    
 }
 
 nav ul li {
-  margin: 0 15px;
+    margin: 0 15px;
 }
 
-/* Creating the nav menu hover effect */
+
 nav ul li a {
-  color: white;
-  text-decoration: none;
-  padding: 5px 10px;
-  border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+/* Updated nav menu with underline animation*/
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #ffd700;
+    transition: width 0.3s ease;
 }
 
-nav ul li a:hover {
-  background-color: dimgray;  
+nav ul li a:hover::after {
+    width: 100%;
 }
 
 /* Class selector */
